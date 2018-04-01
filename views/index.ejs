@@ -1,0 +1,51 @@
+<% include ./partials/header %>
+<!--show page build --!>
+<!-- Header Title with subheader saying what the page does -->
+<!-- All the poems in a nice layout -->
+<div class="ui container indexPage">
+<h1 class="ui header">
+  Welcome to PoemApp
+  <div class="ui sub header ">
+    A place to express yourself
+</div>
+  <div class="ui dividing sub header ">
+    <a class="ui large button black addNew" href="/new">Add New Poem</a>
+</div>
+</h1>
+
+<!--the content forEach function-->
+<div class="ui divided items">
+    <% poems.forEach(function(poem){ %>
+        <div class="item">
+        <div class="content">
+      <a class="header"><%= poem.title %></a>
+      <div class="meta">
+        <span class="cinema" style="color: #009C95"><%= poem.created.toDateString() %></span>
+      </div>
+      <div class="description">
+        <p><%- poem.content.substring(0,50) + "..." %></p>
+      </div>
+      <div class="meta">
+        <span class="cinema"><%= poem.styling %></span>
+        <!--Adding in poem tag name from value-->
+                <% if(poem.styling === "Modern"){ %>
+                <% console.log(poem.styling);} %>
+                 <% if(poem.styling === "Beat"){ %>
+                <% console.log(poem.styling);} %>
+                <% if(poem.styling === "Shakespeare"){ %>
+                <% console.log(poem.styling);} %>
+                <% if(poem.styling === "Romantic"){ %>
+                <% console.log(poem.styling);} %>
+                <% if(poem.styling === "Asian/Eastern"){ %>
+                <% console.log(poem.styling);} %>
+                
+      </div>
+      <div class="">
+          <a class="ui small button black" href="/<%= poem._id %>">View</a>
+      </div>
+      </div>
+      </div>
+    <% }); %>
+</div>
+</div>
+<% include ./partials/footer %>

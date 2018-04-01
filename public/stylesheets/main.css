@@ -1,0 +1,29 @@
+.indexPage{
+    margin-top: 7em;
+}
+.newPost{
+    margin-top: 7em;
+}
+body{
+    background-image: url("/swirl1.jpg");
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #FAFAFA;
+}
+.showContainer{
+    margin-top: 7em;
+    max-width: 800px !important;
+}
+
+#newForm{
+    max-width: 800px !important;
+    margin: 0 auto;
+}
+.addNew{
+    margin: .5em 0 !important;
+}
+
+a:hover{
+    color: #009C95 !important;
+}

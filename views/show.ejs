@@ -1,0 +1,23 @@
+<% include ./partials/header %>
+
+<div class="ui container showContainer">
+   <div class="ui raised segments"> 
+    <h1 class="ui huge center aligned attached header" style="background: rgba(255,255,255,.4)"><%= poem.title %></h1>
+    <div class="ui raised attached segments"> 
+    <div class="ui padded teal segment" style="background: rgba(255,255,255,.3)">
+        <%- poem.content %>
+        <p>
+    <a class="ui tag label"><%= poem.styling %></a>
+    </p>
+     <a class="ui basic small button black" href="/<%= poem._id %>/edit">Edit</a>
+     <form action="/<%= poem._id %>?_method=DELETE" id="deleteForm" method="POST" style="display: inline">
+      <button class="ui small button black">Delete</button>
+      </form>
+          </div>
+    </div>
+    </div>
+</div>
+
+
+
+<% include ./partials/footer %>

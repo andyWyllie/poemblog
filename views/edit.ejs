@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+<div class="ui container newPost">
+    <form class="ui form newForm" action="/<%= poem._id %>?_method=PUT" method="POST">
+        <h2 class="ui divided center aligned icon main header">
+      <i class="circular quote left icon"></i>
+      New Poem
+        </h2>
+        <div class="field">
+          <label>Title</label>
+          <input type="text" name="poem[title]" value="<%= poem.title %>">
+        </div>
+        <div class="field">
+    <label>Text</label>
+    <textarea name="poem[content]"><%= poem.content %></textarea>
+  </div>
+  <div class="field">
+     <label>Text</label>
+    <select name="poem[styling]" value="<%= poem.styling %>">
+      <option value="Modern">Modern</option>
+      <option value="Beat">Beat</option>
+      <option value="Shakespeare">Shakespeare</option>
+      <option value="Romantic">Romantic</option>
+      <option value="Asian/Eastern">Asian/Eastern</option>
+    </select>
+  </div>  
+    <input type="submit" class="ui big button black">
+  </form>
+</div>
+<% include ./partials/footer %>
